@@ -3,7 +3,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const jsLoaders = () => {
   const loaders = [{
@@ -35,12 +34,6 @@ module.exports = {
       template: './index.html',
     }),
     new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, 'src/assets/images'),
-    //     to: path.resolve(__dirname, 'dist/assets/images'),
-    //   },
-    // ]),
   ],
   devServer: {
     port: 5000,
