@@ -37,10 +37,12 @@ button {
 .button {
     background-color: rgba(65,53,45, 0.8);
     cursor: pointer;
-    margin-left: 13px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ffffff;
     font-weight: 700;
+    width: 45px;
+    height: 45px;
+    border-radius: 7px;
 }
 
 .button:hover {
@@ -51,16 +53,10 @@ button {
     background-color: rgba(159,146,138,0.8)
 }
 
-.repeat-button {
-    width: 35px;
-    height: 35px;
-    border-radius: 7px;
-}
-
 .change {
     width: 21px;
     height: 18px;
-    margin-left: 1px;
+    margin-left: 6px;
     background: url(../images/refresh.svg) no-repeat;
 }
 
@@ -68,33 +64,51 @@ button {
     transform: rotate(360deg);
     transition: 1s;
 }
-
 .language-buttons {
-    width: 50px;
-    height: 35px;
-    border-radius: 7px;
+    width: 135px;
+    margin-left: 20px;
+    display: flex;
 }
 
-.current-lang {
-    padding-top: 10px;
-    padding-left: 10px;
+.temperature-buttons {
+    width: 90px;
+    margin-left: 20px;
+    display: flex;
 }
 
-.temperature-buttons button {
-    width: 35px;
-    height: 35px;
+.ru-lang {
+    border-radius: 0;
 }
 
-
-.celsius {
+.celsius, .be-lang {
     border-radius: 0 7px 7px 0;
-    margin-left: -2px;
 }
 
-.fahrenheit {
+.fahrenheit, .eng-lang {
     border-radius: 7px 0 0 7px;
 }
 
 #map {
     /* margin-top: 1000px; */
+}
+
+
+
+@media (max-width: 1279px) {
+    .wrapper {
+      max-width: 1024px;
+    }
+}
+  
+@media (max-width: 1023px) {
+    .wrapper {
+      max-width: 800px;
+    }
+}
+  
+@media (max-width: 799px) {
+    .wrapper {
+      max-width: 640px;
+    }
+    /* change sizes of buttons and there positions  */
 }
