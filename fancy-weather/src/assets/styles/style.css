@@ -25,6 +25,11 @@ body {
     padding-top: 20px;
 }
 
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 button {
     outline: none;
     border: 0;
@@ -86,6 +91,31 @@ button {
 
 .fahrenheit, .eng-lang {
     border-radius: 7px 0 0 7px;
+}
+
+.input-block {
+    display: flex;
+}
+
+.search {
+    border: none;
+    width: 270px;
+    background-color: rgba(65,53,45, 0.8);
+    border-radius: 7px;
+    margin-right: 20px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0 20px;
+    outline: none;
+    cursor: text;
+}
+
+.search-button__icon {
+    width: 23px;
+    height: 23px;
+    margin-left: 5px;
+    background: url(../images/search.svg) no-repeat;
 }
 
 #map {
