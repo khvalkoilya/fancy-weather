@@ -12,8 +12,21 @@ html, body {
 body {
     background: center / cover url(../images/background.jpg) no-repeat;
 }
+
+body:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
   
 .wrapper {
+    z-index: 3;
+    position: relative;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto; 
@@ -99,7 +112,7 @@ button {
 
 .search {
     border: none;
-    width: 270px;
+    width: 274px;
     background-color: rgba(65,53,45, 0.8);
     border-radius: 7px;
     margin-right: 20px;
@@ -117,6 +130,69 @@ button {
     margin-left: 5px;
     background: url(../images/search.svg) no-repeat;
 }
+
+main .wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    padding-top: 70px;
+}
+
+.non-weather-info p {
+    color: #ffffff;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.city {
+    font-size: 5rem;
+}
+/* .country {
+    font-size: 3rem;
+} */
+
+.date, .time {
+    font-size: 2.7rem;
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.current-temp {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 27rem;
+}
+
+.current-weather-info {
+    margin-top: 36%;
+    padding-left: 30px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.current-weather-info p {
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #map {
     /* margin-top: 1000px; */

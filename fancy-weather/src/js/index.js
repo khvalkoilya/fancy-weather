@@ -1,5 +1,23 @@
 import '../assets/styles/style.css';
-// // get My position
+import * as vars from './variables.js';
+// getStartDates();
+
+// async function getStartDates() {
+//     const myPosition = await getAPIDate('https://ipinfo.io/json?token=d14409aeca033b');
+//     console.log(myPosition);
+//     const coordinates = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=Minsk&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=be&no_annotations=1`)
+//     console.log(coordinates);
+//     const weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=53.9000&lon=27.5667&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`)
+//     console.log(weather);
+// }
+
+async function getAPIDate(url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+}
+
+// get My position
 // async function getMyPositionAPI() {
 //   const url = 'https://ipinfo.io/json?token=d14409aeca033b';
 //   const res = await fetch(url);
@@ -7,7 +25,7 @@ import '../assets/styles/style.css';
 //   console.log(data);
 // }
 // getMyPositionAPI();
-// //
+//
 // // get Weather
 // async function getWeatherAPI() {
 //   const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=53.9000&lon=27.5667&units=metric&appid=d419874a64a54466ad82bdcb712a2a83';

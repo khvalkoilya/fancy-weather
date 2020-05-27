@@ -30,7 +30,29 @@
             </div>
         </div>
     </header>
-    <div id="map" style="width: 300px; height: 300px"></div>
+    <main>
+        <div class="wrapper">
+            <section class="weather">
+                <div class="non-weather-info">
+                    <p class="city">MINSK, <span class="country">BELARUS</span></p>
+                    <p class="date">Tuesday &nbsp;26 &nbsp;May &nbsp;<span class="time">21:42</span></p>
+                </div>
+                <div class="weather-info">
+                    <p class="current-temp">15</p>
+                    <div class="current-weather-info">
+                        <p class="summary">OVERCAST</p>
+                        <p class="apparent">FEELS LIKE: <span>14</span>&deg;</p>
+                        <p class="speed">WIND: <span>2</span>M/S</p>
+                        <p class="humidity">HUMIDITY: <span>15</span>%</p>
+                    </div>
+                </div>
+                <div class="weather-3days"></div>
+            </section>
+            <section class="map-section">
+                <div id="map" style="width: 300px; height: 300px"></div>
+            </section>
+        </div>
+    </main>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=613223c6-1f9e-446e-ad9e-5e1b5e8e37b2&lang=en_RU" type="text/javascript">
     </script>
 </body>
