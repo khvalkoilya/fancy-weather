@@ -191,11 +191,24 @@ main .wrapper {
 
 
 
+.map-section {
+    position: relative;
+}
 
+.map-wrapper {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 0;
+    top: 9%;
+    border-radius: 25px;
+    overflow: hidden;
+}
 
 
 #map {
-    /* margin-top: 1000px; */
+    width: 300px;
+    height: 300px;
 }
 
 

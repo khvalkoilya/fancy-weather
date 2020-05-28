@@ -7,8 +7,8 @@ getStartDates();
 async function getStartDates() {
   await getMyPositionAPI();
   console.log(vars.coordinates);
+  ymaps.ready(init);
   await getWeatherAPI();
-//   console.log(weather);
 }
 
 async function getWeatherAPI() {
@@ -24,7 +24,6 @@ async function getWeatherAPI() {
 function weatherMarkup(weather) {
   let temp = vars.tempC;
   let tempFeels = vars.tempFeelsC;
-  console.log(temp)
   if (vars.unit === 'F') {
     temp = vars.tempF;
     tempFeels = vars.tempFeelsF;
@@ -40,13 +39,15 @@ function weatherMarkup(weather) {
 
 async function getMyPositionAPI() {
   const myPosition = await getAPIDate('https://ipinfo.io/json?token=d14409aeca033b');
-  vars.coordinates = myPosition.loc.split(',');
+  vars.coordinates = myPosition.loc.split(',').map(item => Number(item));
 }
 async function getAPIDate(url) {
   const res = await fetch(url);
   const data = await res.json();
   return data;
 }
+
+
 // async function getImageAPI() {
 //   const url = 'https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=7UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs';
 //   const res = await fetch(url);
@@ -65,13 +66,12 @@ async function getAPIDate(url) {
 // getCoordinatesAPI();
 // //
 // // get Map
-// ymaps.ready(init);
-// function init() {
-//   const myMap = new ymaps.Map('map', {
-//     center: [55.76, 37.64],
-//     zoom: 7,
-//     controls: [],
-//   });
-//   myMap.controls.add('zoomControl');
-// }
+function init() {
+  const myMap = new ymaps.Map('map', {
+    center: vars.coordinates,
+    zoom: 7,
+    controls: [],
+  });
+  myMap.controls.add('zoomControl');
+}
 // //
