@@ -1,12 +1,12 @@
+import * as local from './utils/local.js';
+
 export default {
-    myPosition: {},
-    checkboxText: document.querySelector('.checkbox__text'),
-    burger: document.querySelector('.burger'),
-    sideMenu: document.querySelector('.side-menu'),
-    isTrain: true,
-    currentPage: 'Main Page',
-    isWord: true,
-    isDigit: false,
-    positive: 0,
-    mistakes: 0,
-  };
+  coordinates: '',
+  unit: local.get('temperature', 'C'),
+  lang: local.get('lang', 'en'),
+  tempC: 0,
+  tempFeelsC: 0,
+  tempF: 0,
+  tempFeelsF: 0,
+  weatherBlock: document.querySelector('.weather-info'),
+};
