@@ -9,4 +9,6 @@ export default {
   tempF: 0,
   tempFeelsF: 0,
   weatherBlock: document.querySelector('.weather-info'),
+  temp3DaysC: [0, 0, 0],
+  temp3DaysF: [0, 0, 0],
 };

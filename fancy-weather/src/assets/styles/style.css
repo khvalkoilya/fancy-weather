@@ -78,7 +78,7 @@ button {
     background: url(../images/refresh.svg) no-repeat;
 }
 
-.change:hover {
+.change-active {
     transform: rotate(360deg);
     transition: 1s;
 }
@@ -157,21 +157,31 @@ main .wrapper {
 
 .weather-info {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 360px 295px;
 }
 
 .current-temp {
     color: #ffffff;
     font-weight: 400;
-    font-size: 27rem;
+    font-size: 34rem;
 }
 
 .current-weather-info {
-    margin-top: 36%;
     padding-left: 30px;
     color: #ffffff;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.9rem;
+}
+
+.weather-icon-wrapper {
+    height: 147px;
+}
+
+.weather-icon {
+    width: 190px;
+    margin-top: -60px;
+    margin-left: -95px;
+    height: 190px;
 }
 
 .current-weather-info p {
@@ -197,37 +207,37 @@ main .wrapper {
 
 .map-wrapper {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 379px;
+    height: 379px;
     right: 0;
-    top: 9%;
+    top: 30%;
     border-radius: 25px;
     overflow: hidden;
 }
 
-
 #map {
-    width: 300px;
-    height: 300px;
+    width: 379px;
+    height: 379px;
+}
+
+.weather-3-days {
+    width: 400px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
 
 
 @media (max-width: 1279px) {
-    .wrapper {
-      max-width: 1024px;
-    }
+    
 }
   
 @media (max-width: 1023px) {
-    .wrapper {
-      max-width: 800px;
-    }
+    
 }
   
 @media (max-width: 799px) {
-    .wrapper {
-      max-width: 640px;
-    }
+    
     /* change sizes of buttons and there positions  */
 }
