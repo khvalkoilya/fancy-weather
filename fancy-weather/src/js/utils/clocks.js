@@ -25,6 +25,17 @@ function showTime() {
       s = `0${s}`;
     }
     vars.todayDateBlock.innerHTML = `${day} &nbsp;${date} &nbsp;${month} &nbsp;<span class="time">${h}:${m}:${s}</span>`;
+    dateFor3Days(time.getDay() + 1);
+}
+
+function dateFor3Days(day) {
+    Array.from(vars.days3DayOfWeek).forEach((item)=>{
+        if(day > 6) {
+            day -= 7;
+        }
+        item.innerHTML = vars.dayFull[day];
+        day += 1;
+    })
 }
 
 function getTime() {

@@ -98,6 +98,7 @@ function weatherMarkup3Days() {
       ]),
     ], vars.days3Block);
   });
+  vars.days3DayOfWeek = document.querySelectorAll('.days-3-day');
 }
 
 
