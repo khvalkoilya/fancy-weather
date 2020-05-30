@@ -152,9 +152,7 @@ button {
 .city {
     font-size: 5rem;
 }
-/* .country {
-    font-size: 3rem;
-} */
+
 
 .date, .time {
     font-size: 2.7rem;
@@ -229,6 +227,7 @@ button {
     position: relative;
 }
 
+
 .map-wrapper {
     position: absolute;
     width: 379px;
@@ -248,6 +247,42 @@ button {
 
 @media (max-width: 1279px) {
     
+    .city {
+        font-size: 4rem;
+    }
+
+
+    .date, .time {
+        font-size: 2.3rem;
+    }
+
+    .weather-info {
+        grid-template-columns: 336px 295px;
+    }
+
+    .current-temp {
+        font-size: 31rem;
+    }
+
+    .current-weather-info, .days-3-day {
+        font-size: 2.6rem;
+    }
+
+    .weather-3days {
+        width: 540px;
+    }
+    
+
+    .map-wrapper {
+        width: 300px;
+        height: 300px;
+        top: 23%;
+    }
+    
+    #map {
+        width: 300px;
+        height: 300px;
+    }
 }
   
 @media (max-width: 1023px) {
