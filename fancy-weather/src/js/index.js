@@ -1,20 +1,37 @@
 import vars from './variables.js';
 import create from './utils/create.js';
 import * as local from './utils/local.js';
+import clocks from './utils/clocks.js';
 
-getStartDates();
+start();
 
-async function getStartDates() {
+async function start() {
   await getMyPositionAPI();
+  await getDates();
+  vars.wrappers.forEach(item=> item.classList.remove('none'));
+}
+
+async function getDates() {
+  await getCoordinatesAPI();
   await getWeatherAPI();
   await getImageAPI();
   ymaps.ready(init);
   addTemperaturesToVariables();
   weatherMarkup();
+  clocks();
 }
 
+async function getCoordinatesAPI() {
+  const coords = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang}&no_annotations=1`)
+  vars.city = coords.results[0].components.state;
+  vars.country = coords.results[0].components.country;
+  vars.coordinates = coords.results[0].geometry;
+  console.log(vars.city)
+  console.log(vars.country)
+  console.log(vars.coordinates)
+}
 async function getWeatherAPI() {
-  vars.weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=${vars.coordinates[0]}&lon=${vars.coordinates[1]}&lang=${vars.lang}&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`);
+  vars.weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=${vars.coordinates.lat}&lon=${vars.coordinates.lng}&lang=${vars.lang}&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`);
   console.log(vars.weather);
 }
 
@@ -43,6 +60,7 @@ function weatherMarkup() {
 }
 
 function addTemperaturesToVariables() {
+  vars.offset = vars.weather.timezone_offset;
   vars.tempC = Math.round(vars.weather.current.temp);
   vars.tempFeelsC = Math.round(vars.weather.current.feels_like);
   vars.tempF = celsiusToFahrenheit(vars.temp);
@@ -86,7 +104,7 @@ function weatherMarkup3Days() {
 
 async function getMyPositionAPI() {
   const myPosition = await getAPIDate('https://ipinfo.io/json?token=d14409aeca033b');
-  vars.coordinates = myPosition.loc.split(',').map((item) => Number(item));
+  vars.city = myPosition.city;
 }
 
 async function getAPIDate(url) {
@@ -116,7 +134,7 @@ async function getImageAPI() {
 
 function init() {
   const myMap = new ymaps.Map('map', {
-    center: vars.coordinates,
+    center: [vars.coordinates.lat, vars.coordinates.lng],
     zoom: 7,
     controls: [],
   });
