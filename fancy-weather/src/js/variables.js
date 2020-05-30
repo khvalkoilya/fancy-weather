@@ -21,7 +21,7 @@ export default {
   dayFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
   month: ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'],
-
+  coordinatesObject: {},
 
   cityBlock: document.querySelector('.city'),
   todayDateBlock: document.querySelector('.date'),

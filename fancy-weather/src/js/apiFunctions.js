@@ -30,15 +30,7 @@ async function getAPIDate(url) {
 }
 
 export async function getCoordinatesAPI() {
-  const coords = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang}&no_annotations=1`);
-  vars.city = coords.results[0].components.state;
-  vars.country = coords.results[0].components.country;
-  vars.coordinates = coords.results[0].geometry;
-  vars.cityBlock.innerHTML = `${vars.city.toUpperCase()}, <span class="country">${vars.country.toUpperCase()}</span>`;
-//   <p class="city">MINSK, <span class="country">BELARUS</span></p>
-//   console.log(vars.city);
-//   console.log(vars.country);
-//   console.log(vars.coordinates);
+  vars.coordinatesObject = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang}&no_annotations=1`);
 }
 
 export async function getWeatherAPI() {
