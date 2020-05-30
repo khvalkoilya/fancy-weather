@@ -8,19 +8,27 @@ import './events.js';
 start();
 
 async function start() {
-  await api.getMyPositionAPI();
-  await getDates();
-  vars.wrappers.forEach((item) => item.classList.remove('none'));
+    await api.getMyPositionAPI();
+    const trying = await getDates();
+    if(trying === undefined) {
+      vars.wrappers.forEach((item) => item.classList.remove('none'));
+    } else {
+      console.log(trying);
+    }
 }
 
 async function getDates() {
-  await api.getCoordinatesAPI();
-  await api.getWeatherAPI();
-  await api.getImageAPI();
-  ymaps.ready(init);
-  weather.addTemperaturesToVariables();
-  weather.weatherMarkup();
-  clocks();
+  try {
+    await api.getCoordinatesAPI();
+    await api.getWeatherAPI();
+    await api.getImageAPI();
+    ymaps.ready(init);
+    weather.addTemperaturesToVariables();
+    weather.weatherMarkup();
+    clocks();
+  } catch(e) {
+    return e.message
+  }
 }
 
 function init() {

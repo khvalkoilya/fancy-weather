@@ -23,7 +23,7 @@ export default {
     'July', 'August', 'September', 'October', 'November', 'December'],
 
 
-  clockBlock: document.querySelector('.time'),
+  cityBlock: document.querySelector('.city'),
   todayDateBlock: document.querySelector('.date'),
   days3DayOfWeek: '',
 };

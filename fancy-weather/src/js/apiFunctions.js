@@ -34,9 +34,11 @@ export async function getCoordinatesAPI() {
   vars.city = coords.results[0].components.state;
   vars.country = coords.results[0].components.country;
   vars.coordinates = coords.results[0].geometry;
-  console.log(vars.city);
-  console.log(vars.country);
-  console.log(vars.coordinates);
+  vars.cityBlock.innerHTML = `${vars.city.toUpperCase()}, <span class="country">${vars.country.toUpperCase()}</span>`;
+//   <p class="city">MINSK, <span class="country">BELARUS</span></p>
+//   console.log(vars.city);
+//   console.log(vars.country);
+//   console.log(vars.coordinates);
 }
 
 export async function getWeatherAPI() {
