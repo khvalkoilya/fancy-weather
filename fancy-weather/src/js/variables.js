@@ -17,7 +17,9 @@ export default {
   days3Block: document.querySelector('.weather-3days'),
   temp3DaysC: [0, 0, 0],
   temp3DaysF: [0, 0, 0],
-  clockHTML: document.querySelector('.time'),
+  clockBlock: document.querySelector('.time'),
+  todayDateBlock: document.querySelector('.date'),
   dayShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-  dayFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  dayFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 };
