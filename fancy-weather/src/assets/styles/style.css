@@ -242,7 +242,7 @@ button {
 
 
 
-@media (max-width: 1279px) {
+@media (max-width: 1280px) {
     
     .city {
         font-size: 4rem;
@@ -285,7 +285,7 @@ button {
     }
 }
   
-@media (max-width: 1129px) {
+@media (max-width: 1130px) {
     .current-temp {
         font-size: 24rem;
     }
@@ -320,7 +320,7 @@ button {
     
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .wrapper-main {
         display: block;
     }
@@ -335,7 +335,64 @@ button {
     }
 }
   
-@media (max-width: 799px) {
+@media (max-width: 800px) {
+    .city {
+        font-size: 3rem;
+    }
+
+
+    .date, .time {
+        font-size: 2rem;
+    }
+
+    .weather-info {
+        padding-top: 27px;
+    }
+
+    .weather-icon {
+        width: 113px;
+        margin-top: -60px;
+        margin-left: -59px;
+        height: 113px;
+    }
+
+    .current-temp {
+        font-size: 17rem;
+    }
+
+    .current-weather-info, .days-3-day {
+        font-size: 1.5rem;
+    }
+
+    .weather-3days {
+        padding-top: 20px;
+    }
+
+    .days-3-temp {
+        font-size: 4rem;
+    }
+
+    .current-weather-info__text {
+        width: 157px;
+        bottom: 14px;
+    }
+
+    .header .wrapper {
+        display: block;
+    }
+
+    .control-buttons {
+        width: 311px;
+        margin: 0 auto;
+    }
+
+    .input-block {
+        padding-top: 20px;
+        width: 380px;
+        margin: 0 auto;
+    }
+
+
     
     /* change sizes of buttons and there positions  */
 }
