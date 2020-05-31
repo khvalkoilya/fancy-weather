@@ -71,7 +71,7 @@ export function weatherMarkup3Days() {
   }
   console.log(forecast);
   forecast.forEach((item, index) => {
-    create('div', `${index + 1}-day`, [
+    create('div', `day-${index + 1}`, [
       create('p', 'days-3-day'),
       create('p', 'days-3-temp', [
         create('span', 'days-3-temp__temp', `${item.temp}`),

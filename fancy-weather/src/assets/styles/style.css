@@ -248,7 +248,6 @@ button {
         font-size: 4rem;
     }
 
-
     .date, .time {
         font-size: 2.3rem;
     }
@@ -316,14 +315,20 @@ button {
 
     .weather-3days {
         width: 510px;
+        padding-top: 45px;
     }   
     
 }
 
 @media (max-width: 1024px) {
+
     .wrapper-main {
         display: block;
     }
+
+    .weather-3days {
+        padding-top: 0;
+    }  
 
     .map-wrapper {
         width: 100%;
@@ -391,8 +396,121 @@ button {
         width: 380px;
         margin: 0 auto;
     }
+}
 
+@media (max-width: 600px) {
 
-    
-    /* change sizes of buttons and there positions  */
+    .search {
+        width: 207px;
+    }
+
+    .input-block {
+        width: 313px;
+    }
+
+    .wrapper-main {
+        padding-top: 25px;
+    }
+
+    .non-weather-info {
+        text-align: center;
+    }
+
+    .weather-info {
+        padding-top: 0;
+        display: block;
+    }
+
+    .weather-icon {
+        width: 140px;
+        margin-top: -38px;
+        margin-left: 0px;
+        height: 140px;
+    }
+
+    .current-temp {
+        font-size: 15rem;
+        text-align: center;
+    }
+
+    .current-weather-info {
+        padding-left: 0;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .days-3-day {
+        font-size: 2.6rem;
+    }
+
+    .weather-3days {
+        padding-top: 35px;
+        margin: 0 auto;
+        display: block;
+        width: 180px;
+    }
+
+    .day-1, .day-2 {
+        padding-bottom: 35px;
+    }
+
+    .current-weather-info__text {
+        width: 100%;
+        margin-top: -19px;
+        position: relative;
+        bottom: 0;
+    }
+
+    .weather-icon-wrapper {
+        height: 100%;
+    }
+}
+
+@media (max-width: 410px) {
+
+    .wrapper {
+        padding: 0 20px;
+    }
+
+    .control-buttons {
+        width: 265px;
+    }
+
+    .input-block {
+        width: 264px;
+    }
+
+    .wrapper-main {
+        padding-top: 25px;
+    }
+
+    .button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .change {
+        width: 21px;
+        height: 16px;
+        margin-left: 3.5px;
+    }
+
+    .language-buttons {
+        width: 120px;
+        margin-left: 13px;
+    }
+
+    .temperature-buttons {
+        width: 80px;
+        margin-left: 12px;
+    }
+
+    .search {
+        width: 172px;
+        margin-right: 12px;
+    }
+
+    .search-button__icon {
+        margin-left: 3px;
+    }
+
 }
