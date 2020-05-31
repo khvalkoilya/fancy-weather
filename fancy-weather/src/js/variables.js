@@ -5,6 +5,8 @@ export default {
   unit: local.get('temperature', 'C'),
   lang: local.get('lang', 'en'),
   wrappers: document.querySelectorAll('.wrapper'),
+  input: document.querySelector('.search'),
+  submit: document.querySelector('.search-button'),
   city: '',
   country: '',
   offset: 0,
@@ -22,7 +24,7 @@ export default {
   month: ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'],
   coordinatesObject: {},
-
+  map: document.querySelector('#map'),
   cityBlock: document.querySelector('.city'),
   todayDateBlock: document.querySelector('.date'),
   days3DayOfWeek: '',

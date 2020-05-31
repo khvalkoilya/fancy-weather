@@ -1,6 +1,7 @@
 import vars from '../variables.js';
 
 export default function clocks() {
+  vars.cityBlock.innerHTML = `${vars.city.toUpperCase()}, <span class="country">${vars.country.toUpperCase()}</span>`;
   showTime();
   setInterval(() => {
     showTime();
