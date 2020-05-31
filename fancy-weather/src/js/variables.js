@@ -2,7 +2,7 @@ import * as local from './utils/local.js';
 
 export default {
   coordinates: {},
-  unit: local.get('temperature', 'C'),
+  unit: local.get('unit', 'C'),
   lang: local.get('lang', 'en'),
   wrappers: document.querySelectorAll('.wrapper'),
   input: document.querySelector('.search'),
@@ -31,4 +31,8 @@ export default {
   time: '',
   season: ['winter', 'spring', 'summer', 'autumn'],
   dailyTime: ['night', 'morning', 'daytime', 'evening'],
+  langButtons: document.querySelectorAll('.language-buttons > button'),
+  tempButtons: document.querySelectorAll('.temperature-buttons > button'),
+  activeButtons: '',
+  inactiveButtons: document.querySelectorAll('.inactive-button'),
 };

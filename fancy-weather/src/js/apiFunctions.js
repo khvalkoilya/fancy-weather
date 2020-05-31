@@ -9,10 +9,11 @@ export async function getImageAPI() {
   const dailyTime = vars.dailyTime[Math.floor(vars.time.getHours() / 6)];
   const img = new Image();
   try {
-    const image = await getAPIDate(`https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${dailyTime} ${season} ${vars.weather.current.weather[0].main}&client_id=117UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs`);
+    const image = await getAPIDate(`https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${dailyTime} ${season} ${vars.weather.current.weather[0].main}&client_id=7UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs`);
     img.src = image.urls.regular;
     img.onload = () => {
-      document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(${img.src})`;
+      document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), center / cover url(${img.src}) no-repeat`;
+      // document.body.style.backgroundImage = `url(${img.src})`
     };
     console.log(`Search image by: ${dailyTime} ${season} ${vars.weather.current.weather[0].main}`);
   } catch (e) {

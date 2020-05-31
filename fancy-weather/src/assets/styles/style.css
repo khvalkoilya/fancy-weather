@@ -12,9 +12,9 @@ html, body {
 body {
     /* background: center / cover url(../images/background.jpg) no-repeat;
      */
-    background-image: url(../images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), center / cover url(../images/background.jpg) no-repeat;
+    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100vh; */
     transition: all 0.5s ease-out;
 }
   
@@ -65,7 +65,7 @@ button {
     background-color: rgba(65,53,45, 0.7);
 }
 
-.inactive-button {
+.inactive-button, .search-button {
     background-color: rgba(159,146,138,0.8)
 }
 
@@ -92,15 +92,15 @@ button {
     display: flex;
 }
 
-.ru-lang {
+.lang {
     border-radius: 0;
 }
 
-.celsius, .be-lang {
+.unit:last-child, .lang:last-child {
     border-radius: 0 7px 7px 0;
 }
 
-.fahrenheit, .eng-lang {
+.unit:first-child, .lang:first-child {
     border-radius: 7px 0 0 7px;
 }
 
@@ -205,7 +205,7 @@ button {
 
 .days-3-temp {
     margin-top: -16px;
-    font-size: 6rem;
+    font-size: 5.8rem;
 }
 
 
@@ -262,6 +262,10 @@ button {
         width: 540px;
     }
 
+    .days-3-temp {
+        font-size: 4.8rem;
+    }
+
     .current-weather-info__text {
         width: 215px;
     }
@@ -288,7 +292,7 @@ button {
     }
 
     .days-3-temp {
-        font-size: 5rem;
+        font-size: 3.8rem;
     }
 
     .weather-small-icon {
