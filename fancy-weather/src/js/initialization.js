@@ -22,12 +22,12 @@ export async function getDates() {
   return true;
 }
 
-function clear () {
-    vars.weatherBlock.innerHTML = '';
-    vars.days3Block.innerHTML = '';
-    vars.cityBlock.innerHTML = '';
-    vars.todayDateBlock.innerHTML = '';
-    vars.map.innerHTML = ''
+function clear() {
+  vars.weatherBlock.innerHTML = '';
+  vars.days3Block.innerHTML = '';
+  vars.cityBlock.innerHTML = '';
+  vars.todayDateBlock.innerHTML = '';
+  vars.map.innerHTML = '';
 }
 
 export function init() {

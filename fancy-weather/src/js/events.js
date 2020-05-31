@@ -1,6 +1,6 @@
 import { getImageAPIClick } from './apiFunctions.js';
 import vars from './variables.js';
-import { getDates } from './initialization.js'
+import { getDates } from './initialization.js';
 
 document.querySelector('.repeat-button').addEventListener('click', () => getImageAPIClick());
 vars.submit.addEventListener('click', () => searchFunction());

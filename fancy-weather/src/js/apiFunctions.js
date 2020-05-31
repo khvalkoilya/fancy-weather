@@ -5,7 +5,7 @@ export async function getImageAPI() {
   const image = await getAPIDate(`https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${vars.weather.current.weather[0].main}&client_id=7UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs`);
   img.src = image.urls.regular;
   img.onload = function () {
-    document.body.style.background = `center / cover url(${img.src}) no-repeat`;
+    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(${img.src})`;
   };
 }
 
