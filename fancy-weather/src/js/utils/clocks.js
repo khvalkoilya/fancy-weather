@@ -1,6 +1,6 @@
 import vars from '../variables.js';
 
-export default function clocks() {
+export function clocks() {
   vars.cityBlock.innerHTML = `${vars.city.toUpperCase()}, <span class="country">${vars.country.toUpperCase()}</span>`;
   showTime();
   setInterval(() => {
@@ -41,7 +41,7 @@ function dateFor3Days(time) {
   });
 }
 
-function getTime() {
+export function getTime() {
   const myDate = new Date();
   const differense = myDate.getTimezoneOffset() * 60000;
   const offset = vars.offset * 1000;

@@ -7,11 +7,11 @@ import * as init from './initialization.js';
 start();
 
 async function start() {
-  await api.getMyPositionAPI();
-  const trying = await init.getDates();
-  if (trying === true) {
+  try {
+    await api.getMyPositionAPI();
+    await init.getDates();
     vars.wrappers.forEach((item) => item.classList.remove('none'));
-  } else {
-    console.log(trying);
+  } catch (e) {
+    console.log(e.message);
   }
 }

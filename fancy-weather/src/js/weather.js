@@ -23,7 +23,6 @@ export function weatherMarkup() {
 }
 
 export function addTemperaturesToVariables() {
-  vars.offset = vars.weather.timezone_offset;
   vars.tempC = Math.round(vars.weather.current.temp);
   vars.tempFeelsC = Math.round(vars.weather.current.feels_like);
   vars.tempF = celsiusToFahrenheit(vars.temp);

@@ -28,4 +28,7 @@ export default {
   cityBlock: document.querySelector('.city'),
   todayDateBlock: document.querySelector('.date'),
   days3DayOfWeek: '',
+  time: '',
+  season: ['winter', 'spring', 'summer', 'autumn'],
+  dailyTime: ['night', 'morning', 'daytime', 'evening'],
 };

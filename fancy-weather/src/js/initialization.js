@@ -1,24 +1,21 @@
 
 import workWithCoordinates from './workWithCoordinates.js';
-import clocks from './utils/clocks.js';
+import { clocks } from './utils/clocks.js';
 import * as weather from './weather.js';
 import * as api from './apiFunctions.js';
 import vars from './variables.js';
 
 export async function getDates() {
-  try {
-    await api.getCoordinatesAPI();
-    workWithCoordinates();
-    await api.getWeatherAPI();
-    await api.getImageAPI();
-    clear();
-    ymaps.ready(init);
-    weather.addTemperaturesToVariables();
-    weather.weatherMarkup();
-    clocks();
-  } catch (e) {
-    return e.message;
-  }
+  await api.getCoordinatesAPI();
+  workWithCoordinates();
+  await api.getWeatherAPI();
+  await api.getImageAPI();
+  clear();
+  ymaps.ready(init);
+  weather.addTemperaturesToVariables();
+  weather.weatherMarkup();
+  clocks();
+
   return true;
 }
 

@@ -1,12 +1,23 @@
 import vars from './variables.js';
+import { getTime } from './utils/clocks.js';
 
 export async function getImageAPI() {
+  vars.offset = vars.weather.timezone_offset;
+  vars.time = getTime();
+  const month = (vars.time.getMonth() + 1) / 3;
+  const season = vars.season[Math.floor(month % 4)];
+  const dailyTime = vars.dailyTime[Math.floor(vars.time.getHours() / 6)];
   const img = new Image();
-  const image = await getAPIDate(`https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${vars.weather.current.weather[0].main}&client_id=7UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs`);
-  img.src = image.urls.regular;
-  img.onload = function () {
-    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(${img.src})`;
-  };
+  try {
+    const image = await getAPIDate(`https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${dailyTime} ${season} ${vars.weather.current.weather[0].main}&client_id=117UB2yTJJmRIoR757A7aooFohbAZI4MTLdz7uPjtdVGs`);
+    img.src = image.urls.regular;
+    img.onload = () => {
+      document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(${img.src})`;
+    };
+    console.log(`Search image by: ${dailyTime} ${season} ${vars.weather.current.weather[0].main}`);
+  } catch (e) {
+    console.log(e.message);
+  }
 }
 
 export async function getImageAPIClick() {
