@@ -27,7 +27,7 @@ export function changeUnitOfTemperature(unit) {
   let tempFeels = vars.tempFeelsC;
   let temp3Days = vars.temp3DaysC;
   if (unit === 'F') {
-    console.log(vars.tempF)
+    console.log(vars.tempF);
     temp = vars.tempF;
     tempFeels = vars.tempFeelsF;
     temp3Days = vars.temp3DaysF;
@@ -36,8 +36,9 @@ export function changeUnitOfTemperature(unit) {
   document.querySelector('.temp-feels').innerHTML = tempFeels;
   document.querySelector('.current-temp').innerHTML = temp;
   document.querySelectorAll('.days-3-temp__temp').forEach((item, index) => {
-    item.innerHTML = temp3Days[index].temp;
-  })
+    const elem = item;
+    elem.innerHTML = temp3Days[index].temp;
+  });
 }
 
 export function addTemperaturesToVariables() {

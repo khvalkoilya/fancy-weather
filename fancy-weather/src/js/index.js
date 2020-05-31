@@ -12,6 +12,6 @@ async function start() {
     await init.getDates();
     vars.wrappers.forEach((item) => item.classList.remove('none'));
   } catch (e) {
-    console.log(e.message);
+    alert('qe');
   }
 }

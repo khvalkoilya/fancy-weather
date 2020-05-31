@@ -20,6 +20,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'no-useless-catch': 0,
     'no-use-before-define': ['error', { functions: false }],
     'import/extensions': ['error', 'always', { ignorePackages: true }],
     'max-len': [2, 120, 4, { ignoreUrls: true }],

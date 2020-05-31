@@ -6,15 +6,19 @@ import * as api from './apiFunctions.js';
 import vars from './variables.js';
 
 export async function getDates() {
-  await api.getCoordinatesAPI();
-  workWithCoordinates();
-  await api.getWeatherAPI();
-  await api.getImageAPI();
-  clear();
-  ymaps.ready(init);
-  weather.addTemperaturesToVariables();
-  weather.weatherMarkup();
-  clocks();
+  try {
+    await api.getCoordinatesAPI();
+    workWithCoordinates();
+    await api.getWeatherAPI();
+    await api.getImageAPI();
+    clear();
+    ymaps.ready(init);
+    weather.addTemperaturesToVariables();
+    weather.weatherMarkup();
+    clocks();
+  } catch (e) {
+    console.log(e.message);
+  }
 
   return true;
 }

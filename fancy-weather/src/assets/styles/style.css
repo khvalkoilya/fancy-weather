@@ -12,7 +12,10 @@ html, body {
 body {
     /* background: center / cover url(../images/background.jpg) no-repeat;
      */
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), center / cover url(../images/background.jpg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     /* background-repeat: no-repeat; */
     /* background-size: 100% 100vh; */
     transition: all 0.5s ease-out;
@@ -194,7 +197,7 @@ button {
 .weather-3days {
     color: #ffffff;
     font-weight: 700;
-    width: 562px;
+    width: 637px;
     display: flex;
     justify-content: space-between;
 }
@@ -259,7 +262,7 @@ button {
     }
 
     .weather-3days {
-        width: 540px;
+        width: 600px;
     }
 
     .days-3-temp {
@@ -312,13 +315,24 @@ button {
     }
 
     .weather-3days {
-        width: 466px;
+        width: 510px;
     }   
     
 }
 
 @media (max-width: 1023px) {
+    .wrapper-main {
+        display: block;
+    }
+
+    .map-wrapper {
+        width: 100%;
+        margin: 40px 0;
+    }
     
+    #map {
+        width: 100%;
+    }
 }
   
 @media (max-width: 799px) {

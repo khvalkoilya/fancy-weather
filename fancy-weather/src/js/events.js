@@ -18,26 +18,26 @@ function removeInactive(collection, type) {
 }
 
 function changeActiveInactive(index, item, type) {
-    vars.activeButtons[index].classList.add('inactive-button')
-    vars.activeButtons[index].classList.remove('active-button')
-    item.classList.remove('inactive-button');
-    item.classList.add('active-button');
-    local.set(type, item.innerHTML)
+  vars.activeButtons[index].classList.add('inactive-button');
+  vars.activeButtons[index].classList.remove('active-button');
+  item.classList.remove('inactive-button');
+  item.classList.add('active-button');
+  local.set(type, item.innerHTML);
 }
 
 vars.inactiveButtons.forEach((item) => {
   item.addEventListener('click', () => {
     vars.activeButtons = document.querySelectorAll('.active-button');
     if (item.classList.contains('unit')) {
-        changeActiveInactive(1, item, 'unit');
-        changeUnitOfTemperature(item.innerHTML);
-        vars.unit = item.innerHTML;
+      changeActiveInactive(1, item, 'unit');
+      changeUnitOfTemperature(item.innerHTML);
+      vars.unit = item.innerHTML;
     } else {
-        changeActiveInactive(0, item, 'lang');
-        vars.lang = item.innerHTML;
+      changeActiveInactive(0, item, 'lang');
+      vars.lang = item.innerHTML;
     }
     vars.inactiveButtons = document.querySelectorAll('.inactive-button');
-  })
+  });
 });
 
 document.querySelector('.repeat-button').addEventListener('click', () => getImageAPIClick());
