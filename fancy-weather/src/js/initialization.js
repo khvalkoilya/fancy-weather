@@ -5,9 +5,10 @@ import * as weather from './weather.js';
 import * as api from './apiFunctions.js';
 import vars from './variables.js';
 import translate from './translate.js';
-import init from './map.js'
+import init from './map.js';
+import createErrorMessage from './error.js';
 
-export async function getDates() {
+export default async function getDates() {
   try {
     await api.getCoordinatesAPI();
     workWithCoordinates();
@@ -20,7 +21,8 @@ export async function getDates() {
     translate();
     clocks();
   } catch (e) {
-    console.log(e.message);
+    createErrorMessage(e.message);
+    throw new Error(e);
   }
 
   return true;
@@ -33,4 +35,3 @@ function clear() {
   vars.todayDateBlock.innerHTML = '';
   vars.map.innerHTML = '';
 }
-

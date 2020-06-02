@@ -42,14 +42,11 @@ export async function getAPIDate(url) {
 }
 
 export async function getCoordinatesAPI() {
-  try {
-    vars.coordinatesObject = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang.toLowerCase()}&no_annotations=1`);
-  } catch (e) {
-    throw e;
-  }
+  vars.coordinatesObject = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang.toLowerCase()}&no_annotations=1`);
 }
+
 
 export async function getWeatherAPI() {
   vars.weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=${vars.coordinates.lat}&lon=${vars.coordinates.lng}&lang=${vars.lang}&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`);
-  console.log(vars.weather);
+  // console.log(vars.weather);
 }

@@ -243,6 +243,50 @@ button {
   justify-content: flex-end;
 }
 
+.error {
+  display: block;
+  background-color: #b63a3a;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 6px solid #6e2121;
+  width: 40%;
+  height: 30%;
+  left: 30%;
+  top: 35%;
+  position: fixed;
+  border-radius: 30px;
+  z-index: 3;
+}
+
+.error-close {
+  background-image: url(../images/close.svg);
+  height: 20px;
+  position: absolute;
+  width: 20px;
+  right: 10px;
+}
+
+.error-close:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.error__simple-text, .error__error-text {
+  padding-top: 10px;
+  width: 80%;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.error__error-text {
+  font-size: 1.8rem;
+  padding-top: 25px;
+  font-weight: 400;
+}
+
 @media (max-width: 1280px) {
 
   .city {
@@ -325,6 +369,13 @@ button {
     bottom: 0;
   }
 
+  .error__simple-text {
+    font-size: 2.2rem;
+  }
+
+  .error__error-text {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -359,6 +410,14 @@ button {
 
   .coordinates {
     justify-content: flex-start;
+  }
+
+  .error__simple-text {
+    font-size: 2rem;
+  }
+
+  .error__error-text {
+    font-size: 1.3rem;
   }
 
 }
@@ -418,6 +477,14 @@ button {
     padding-top: 20px;
     width: 380px;
     margin: 0 auto;
+  }
+
+  .error__simple-text {
+    font-size: 1.8rem;
+  }
+
+  .error__error-text {
+    font-size: 1.1rem;
   }
 
 }
@@ -488,6 +555,14 @@ button {
     height: 100%;
   }
 
+  .error__simple-text {
+    font-size: 1.4rem;
+  }
+
+  .error__error-text {
+    font-size: 1rem;
+  }
+
 }
 
 @media (max-width: 410px) {
@@ -536,6 +611,16 @@ button {
 
   .search-button__icon {
     margin-left: 3px;
+  }
+
+  .error__simple-text {
+    width: 68%;
+    font-size: 1.1rem;
+  }
+
+  .error__error-text {
+    width: 68%;
+    font-size: 0.8rem;
   }
 
 }

@@ -25,12 +25,10 @@ function filler(to, what) {
 }
 
 function mapMarkup() {
-  const lat = separator('lat')
+  const lat = separator('lat');
   const lng = separator('lng');
-  filler('latDeg', lat[0])
-  filler('latMin', lat[1])
-  filler('lngDeg', lng[0])
-  filler('lngMin', lng[1])
-  // console.log(lat, lng);
-
+  filler('latDeg', lat[0]);
+  filler('latMin', lat[1]);
+  filler('lngDeg', lng[0]);
+  filler('lngMin', lng[1]);
 }

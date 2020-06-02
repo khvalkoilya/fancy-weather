@@ -10,9 +10,10 @@ export default function translate() {
   words.summary = vars.weather.current.weather[0].description.toUpperCase();
   vars.elementsToTranslate = document.querySelectorAll('[data-i18n]');
   vars.elementsToTranslate.forEach((element) => {
-    element.innerHTML = words[element.dataset.i18n];
+    const el = element;
+    el.innerHTML = words[element.dataset.i18n];
   });
-    
+
   vars.input.setAttribute('placeholder', words.search);
   // vars.weather.current.weather[0].description.toUpperCase()
 }

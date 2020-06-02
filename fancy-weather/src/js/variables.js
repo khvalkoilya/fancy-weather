@@ -1,6 +1,7 @@
 import * as local from './utils/local.js';
 
 export default {
+  body: document.querySelector('body'),
   coordinates: {},
   unit: local.get('unit', 'C'),
   lang: local.get('lang', 'en'),
@@ -39,4 +40,7 @@ export default {
   latMin: document.querySelector('.lat-string > .coord-min'),
   lngDeg: document.querySelector('.lng-string > .coord-deg'),
   lngMin: document.querySelector('.lng-string > .coord-min'),
+  errorBlock: document.querySelector('.error'),
+  closeErrorBlock: document.querySelector('.error-close'),
+  errorText: document.querySelector('.error__error-text'),
 };

@@ -8,5 +8,6 @@ export default {
   humidity: 'HUMIDITY',
   search: 'Search',
   lat: 'Latitude',
-  lng: 'Longitude'
+  lng: 'Longitude',
+  error: 'Error getting result. Check entered data.',
 };

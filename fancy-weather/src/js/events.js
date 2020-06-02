@@ -1,6 +1,6 @@
 import { getImageAPIClick, getCoordinatesAPI, getWeatherAPI } from './apiFunctions.js';
 import vars from './variables.js';
-import { getDates } from './initialization.js';
+import getDates from './initialization.js';
 import * as local from './utils/local.js';
 import { changeUnitOfTemperature } from './weather.js';
 import translate from './translate.js';
@@ -9,7 +9,6 @@ import workWithCoordinates from './workWithCoordinates.js';
 
 removeInactive(vars.langButtons, vars.lang);
 removeInactive(vars.tempButtons, vars.unit);
-// vars.activeButtons = document.querySelectorAll('.active-button');
 
 function removeInactive(collection, type) {
   Array.from(collection).forEach((elem) => {
@@ -51,6 +50,7 @@ async function clickOnInactiveButton(item) {
 function inactiveButtonsFunction(item) {
   item.addEventListener('click', () => clickOnInactiveButton(item));
 }
+
 vars.inactiveButtons.forEach((item) => inactiveButtonsFunction(item));
 
 document.querySelector('.repeat-button').addEventListener('click', () => getImageAPIClick());
