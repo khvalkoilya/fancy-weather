@@ -35,4 +35,8 @@ export default {
   activeButtons: '',
   inactiveButtons: document.querySelectorAll('.inactive-button'),
   elementsToTranslate: '',
+  latDeg: document.querySelector('.lat-string > .coord-deg'),
+  latMin: document.querySelector('.lat-string > .coord-min'),
+  lngDeg: document.querySelector('.lng-string > .coord-deg'),
+  lngMin: document.querySelector('.lng-string > .coord-min'),
 };

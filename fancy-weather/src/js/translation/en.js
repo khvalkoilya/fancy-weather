@@ -7,4 +7,6 @@ export default {
   speed: 'WIND',
   humidity: 'HUMIDITY',
   search: 'Search',
+  lat: 'Latitude',
+  lng: 'Longitude'
 };

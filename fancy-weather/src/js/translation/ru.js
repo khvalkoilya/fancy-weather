@@ -7,4 +7,6 @@ export default {
   speed: 'ВЕТЕР',
   humidity: 'ВЛАЖНОСТЬ',
   search: 'Поиск',
+  lat: 'Широта',
+  lng: 'Долгота'
 };
