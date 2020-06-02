@@ -1,10 +1,10 @@
-import { getImageAPIClick } from './apiFunctions.js';
+import { getImageAPIClick, getCoordinatesAPI, getWeatherAPI } from './apiFunctions.js';
 import vars from './variables.js';
 import { getDates } from './initialization.js';
 import * as local from './utils/local.js';
 import { changeUnitOfTemperature } from './weather.js';
 import translate from './translate.js';
-import { getCoordinatesAPI, getWeatherAPI } from './apiFunctions.js';
+
 import workWithCoordinates from './workWithCoordinates.js';
 
 removeInactive(vars.langButtons, vars.lang);
@@ -20,7 +20,7 @@ function removeInactive(collection, type) {
   });
 }
 
-function changeActiveInactive(index, item, type) {
+function changeActiveInactive(index, item) {
   vars.activeButtons[index].classList.add('inactive-button');
   vars.activeButtons[index].classList.remove('active-button');
   item.classList.remove('inactive-button');
@@ -28,7 +28,7 @@ function changeActiveInactive(index, item, type) {
 }
 
 async function transitionToChange(index, item, type) {
-  changeActiveInactive(index, item, type);
+  changeActiveInactive(index, item);
   local.set(type, item.innerHTML);
   vars[type] = item.innerHTML;
 }

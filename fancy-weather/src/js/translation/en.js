@@ -6,5 +6,5 @@ export default {
   apparent: 'FEELS LIKE',
   speed: 'WIND',
   humidity: 'HUMIDITY',
-  search: 'Search'
+  search: 'Search',
 };

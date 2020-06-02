@@ -6,5 +6,5 @@ export default {
   apparent: 'АДЧУВАЕЦЦА ЯК',
   speed: 'ВЕЦЕР',
   humidity: 'ВIЛЬГОТНАСЦЬ',
-  search: 'Пошук'
+  search: 'Пошук',
 };

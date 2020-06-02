@@ -14,9 +14,15 @@ export function weatherMarkup() {
     create('div', 'weather-icon-wrapper', create('img', 'weather-icon', null, null, ['src', `https://openweathermap.org/img/wn/${vars.weather.current.weather[0].icon}@2x.png`])),
     create('div', 'current-weather-info__text', [
       create('p', 'summary', null, null, ['data-i18n', 'summary']),
-      create('p', 'apparent', [create('span', null, null, null, ['data-i18n', 'apparent']), ': ' , create('span', 'temp-feels', `${tempFeels}`)]),
-      create('p', 'speed', [create('span', null, null, null, ['data-i18n', 'speed']), create('span', null, `: ${vars.weather.current.wind_speed} M/S`)]),
-      create('p', 'humidity', [create('span', null, null, null, ['data-i18n', 'humidity']), create('span', null, `: ${vars.weather.current.humidity} %`)]),    ]),
+
+      create('p', 'apparent', [create('span', null, null, null, ['data-i18n', 'apparent']), ': ',
+        create('span', 'temp-feels', `${tempFeels}`)]),
+
+      create('p', 'speed', [create('span', null, null, null, ['data-i18n', 'speed']),
+        create('span', null, `: ${vars.weather.current.wind_speed} M/S`)]),
+
+      create('p', 'humidity', [create('span', null, null, null, ['data-i18n', 'humidity']),
+        create('span', null, `: ${vars.weather.current.humidity} %`)])]),
   ], vars.weatherBlock);
   weatherMarkup3Days();
 }

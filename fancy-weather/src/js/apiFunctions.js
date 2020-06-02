@@ -42,7 +42,7 @@ export async function getAPIDate(url) {
 }
 
 export async function getCoordinatesAPI() {
-    console.log(vars.lang)
+  console.log(vars.lang);
   try {
     vars.coordinatesObject = await getAPIDate(`https://api.opencagedata.com/geocode/v1/json?q=${vars.city}&key=3d0e9d59f264428eb45050c8162e5dce&pretty=1&language=${vars.lang.toLowerCase()}&no_annotations=1`);
   } catch (e) {

@@ -12,6 +12,7 @@ export default function translate() {
   vars.elementsToTranslate.forEach((element) => {
     element.innerHTML = words[element.dataset.i18n];
   });
+    
   vars.input.setAttribute('placeholder', words.search);
   // vars.weather.current.weather[0].description.toUpperCase()
 }

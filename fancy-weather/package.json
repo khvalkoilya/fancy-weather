@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "editorconfig": "^0.15.3",
     "normalize.css": "^8.0.1"
   }
 }
