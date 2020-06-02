@@ -35,7 +35,7 @@ export async function getMyPositionAPI() {
   vars.city = myPosition.city;
 }
 
-async function getAPIDate(url) {
+export async function getAPIDate(url) {
   const res = await fetch(url);
   const data = await res.json();
   return data;

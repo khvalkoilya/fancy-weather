@@ -3,7 +3,9 @@ import vars from './variables.js';
 import * as api from './apiFunctions.js';
 import './events.js';
 import * as init from './initialization.js';
+import translate from './translate.js';
 
+translate();
 start();
 
 async function start() {
