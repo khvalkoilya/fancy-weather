@@ -9,6 +9,7 @@ function closeByClickOnScreen(e) {
 }
 
 export default function createErrorMessage(error) {
+  vars.city = vars.previousCity;
   vars.errorBlock.classList.remove('none');
   vars.errorText.innerHTML = error;
   vars.closeErrorBlock.addEventListener('click', () => vars.errorBlock.classList.add('none'));

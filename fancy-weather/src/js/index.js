@@ -1,5 +1,4 @@
 import vars from './variables.js';
-// import * as local from './utils/local.js';
 import * as api from './apiFunctions.js';
 import createErrorMessage from './error.js';
 import './events.js';

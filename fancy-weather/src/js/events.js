@@ -66,6 +66,7 @@ function searchFunction() {
   const { value } = vars.input;
   vars.input.value = '';
   if (value.length !== 0) {
+    vars.previousCity = vars.city;
     vars.city = value;
     getDates();
   }

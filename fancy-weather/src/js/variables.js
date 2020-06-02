@@ -9,6 +9,7 @@ export default {
   input: document.querySelector('.search'),
   submit: document.querySelector('.search-button'),
   city: '',
+  previousCity: '',
   country: '',
   offset: 0,
   weather: {},
