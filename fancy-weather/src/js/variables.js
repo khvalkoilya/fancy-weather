@@ -34,4 +34,5 @@ export default {
   tempButtons: document.querySelectorAll('.temperature-buttons > button'),
   activeButtons: '',
   inactiveButtons: document.querySelectorAll('.inactive-button'),
+  elementsToTranslate: '',
 };

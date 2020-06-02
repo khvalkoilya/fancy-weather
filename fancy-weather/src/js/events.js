@@ -26,30 +26,30 @@ function changeActiveInactive(index, item, type) {
 }
 
 function transitionToChange(index, item, type, func) {
-    changeActiveInactive(index, item, type)
-    local.set(type, item.innerHTML);
-    vars[type] = item.innerHTML;
-    func(item.innerHTML);
+  changeActiveInactive(index, item, type);
+  local.set(type, item.innerHTML);
+  vars[type] = item.innerHTML;
+  func(item.innerHTML);
 }
 
 function clickOnInactiveButton(item) {
-    vars.activeButtons = document.querySelectorAll('.active-button');
-    if (item.classList.contains('unit')) {
-        transitionToChange(1, item, 'unit', changeUnitOfTemperature)
+  vars.activeButtons = document.querySelectorAll('.active-button');
+  if (item.classList.contains('unit')) {
+    transitionToChange(1, item, 'unit', changeUnitOfTemperature);
     //   changeActiveInactive(1, item, 'unit');
     //   changeUnitOfTemperature(item.innerHTML);
     //   vars.unit = item.innerHTML;
-    } else {
-        transitionToChange(0, item, 'lang', translate)
+  } else {
+    transitionToChange(0, item, 'lang', translate);
     //   changeActiveInactive(0, item, 'lang');
     //   translate(item.innerHTML);
     //   vars.lang = item.innerHTML;
-    }
-    vars.inactiveButtons = document.querySelectorAll('.inactive-button');
+  }
+  vars.inactiveButtons = document.querySelectorAll('.inactive-button');
 }
 
 function inactiveButtonsFunction(item) {
-    item.addEventListener('click', () => clickOnInactiveButton(item));
+  item.addEventListener('click', () => clickOnInactiveButton(item));
 }
 vars.inactiveButtons.forEach((item) => inactiveButtonsFunction(item));
 

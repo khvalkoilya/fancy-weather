@@ -25,7 +25,7 @@ export default function create(el, classNames, child, parent, ...dataAttr) {
       if (attrValue === '') {
         element.setAttribute(attrName, '');
       }
-      if (attrName.match(/value|id|placeholder|cols|rows|autocorrect|spellcheck|src/)) {
+      if (attrName.match(/value|id|placeholder|cols|rows|autocorrect|spellcheck|src|data-i18n/)) {
         element.setAttribute(attrName, attrValue);
       } else {
         element.dataset[attrName] = attrValue;
