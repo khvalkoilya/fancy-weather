@@ -4,6 +4,8 @@ import { getDates } from './initialization.js';
 import * as local from './utils/local.js';
 import { changeUnitOfTemperature } from './weather.js';
 import translate from './translate.js';
+import { getCoordinatesAPI, getWeatherAPI } from './apiFunctions.js';
+import workWithCoordinates from './workWithCoordinates.js';
 
 removeInactive(vars.langButtons, vars.lang);
 removeInactive(vars.tempButtons, vars.unit);
@@ -25,25 +27,23 @@ function changeActiveInactive(index, item, type) {
   item.classList.add('active-button');
 }
 
-function transitionToChange(index, item, type, func) {
+async function transitionToChange(index, item, type) {
   changeActiveInactive(index, item, type);
   local.set(type, item.innerHTML);
   vars[type] = item.innerHTML;
-  func(item.innerHTML);
 }
 
-function clickOnInactiveButton(item) {
+async function clickOnInactiveButton(item) {
   vars.activeButtons = document.querySelectorAll('.active-button');
   if (item.classList.contains('unit')) {
     transitionToChange(1, item, 'unit', changeUnitOfTemperature);
-    //   changeActiveInactive(1, item, 'unit');
-    //   changeUnitOfTemperature(item.innerHTML);
-    //   vars.unit = item.innerHTML;
+    changeUnitOfTemperature(item.innerHTML);
   } else {
-    transitionToChange(0, item, 'lang', translate);
-    //   changeActiveInactive(0, item, 'lang');
-    //   translate(item.innerHTML);
-    //   vars.lang = item.innerHTML;
+    transitionToChange(0, item, 'lang');
+    await getCoordinatesAPI();
+    workWithCoordinates();
+    await getWeatherAPI();
+    translate();
   }
   vars.inactiveButtons = document.querySelectorAll('.inactive-button');
 }

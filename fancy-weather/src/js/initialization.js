@@ -4,6 +4,7 @@ import { clocks } from './utils/clocks.js';
 import * as weather from './weather.js';
 import * as api from './apiFunctions.js';
 import vars from './variables.js';
+import translate from './translate.js';
 
 export async function getDates() {
   try {
@@ -15,6 +16,7 @@ export async function getDates() {
     ymaps.ready(init);
     weather.addTemperaturesToVariables();
     weather.weatherMarkup();
+    translate();
     clocks();
   } catch (e) {
     console.log(e.message);

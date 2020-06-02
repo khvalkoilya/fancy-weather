@@ -3,7 +3,7 @@ import vars from './variables.js';
 import * as api from './apiFunctions.js';
 import './events.js';
 import * as init from './initialization.js';
-import translate from './translate.js';
+
 
 start();
 
@@ -11,7 +11,6 @@ async function start() {
   try {
     await api.getMyPositionAPI();
     await init.getDates();
-    translate();
     vars.wrappers.forEach((item) => item.classList.remove('none'));
   } catch (e) {
     alert('qe');

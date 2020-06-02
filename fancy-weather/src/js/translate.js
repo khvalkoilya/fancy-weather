@@ -6,8 +6,12 @@ export default function translate() {
   vars.dayFull = words.dayFull;
   vars.dayShort = words.dayShort;
   vars.month = words.month;
+  words.city = `${vars.city.toUpperCase()}, ${vars.country.toUpperCase()}`;
+  words.summary = vars.weather.current.weather[0].description.toUpperCase();
   vars.elementsToTranslate = document.querySelectorAll('[data-i18n]');
   vars.elementsToTranslate.forEach((element) => {
     element.innerHTML = words[element.dataset.i18n];
   });
+  vars.input.setAttribute('placeholder', words.search);
+  // vars.weather.current.weather[0].description.toUpperCase()
 }
