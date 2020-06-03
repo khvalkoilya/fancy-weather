@@ -68,7 +68,7 @@ button {
   background-color: rgba(65,53,45, 0.7);
 }
 
-.inactive-button, .search-button {
+.inactive-button, .inactive-search {
   background-color: rgba(159,146,138,0.8)
 }
 
@@ -124,6 +124,17 @@ button {
   padding: 0 20px;
   outline: none;
   cursor: text;
+}
+
+.micro-button {
+  margin-right: 20px;
+}
+
+.micro-button__icon {
+  width: 23px;
+  height: 23px;
+  margin-left: 5px;
+  background: url(../images/audio.svg) no-repeat;
 }
 
 .search-button__icon {
@@ -380,6 +391,10 @@ button {
 
 @media (max-width: 1024px) {
 
+  .search {
+    width: 200px;
+  }
+
   .wrapper-main {
     display: block;
   }
@@ -475,7 +490,7 @@ button {
 
   .input-block {
     padding-top: 20px;
-    width: 380px;
+    width: 370px;
     margin: 0 auto;
   }
 
@@ -492,11 +507,11 @@ button {
 @media (max-width: 600px) {
 
   .search {
-    width: 207px;
+    width: 146px;
   }
 
   .input-block {
-    width: 313px;
+    width: 317px;
   }
 
   .wrapper-main {
@@ -567,16 +582,20 @@ button {
 
 @media (max-width: 410px) {
 
+  .search {
+    width: 103px;
+  }
+
+  .input-block {
+    width: 267px;
+  }
+
   .wrapper {
     padding: 0 20px;
   }
 
   .control-buttons {
     width: 265px;
-  }
-
-  .input-block {
-    width: 264px;
   }
 
   .wrapper-main {
@@ -604,12 +623,7 @@ button {
     margin-left: 12px;
   }
 
-  .search {
-    width: 172px;
-    margin-right: 12px;
-  }
-
-  .search-button__icon {
+  .search-button__icon, .micro-button__icon {
     margin-left: 3px;
   }
 

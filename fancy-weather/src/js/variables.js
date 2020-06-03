@@ -7,6 +7,7 @@ export default {
   lang: local.get('lang', 'en'),
   wrappers: document.querySelectorAll('.wrapper'),
   input: document.querySelector('.search'),
+  micro: document.querySelector('.micro-button'),
   submit: document.querySelector('.search-button'),
   city: '',
   previousCity: '',

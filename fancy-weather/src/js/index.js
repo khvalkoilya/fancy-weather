@@ -4,7 +4,6 @@ import createErrorMessage from './error.js';
 import './events.js';
 import getDates from './initialization.js';
 
-
 start();
 
 async function start() {

@@ -4,7 +4,7 @@ import getDates from './initialization.js';
 import * as local from './utils/local.js';
 import { changeUnitOfTemperature } from './weather.js';
 import translate from './translate.js';
-
+import recognizerStart from './speech.js'
 import workWithCoordinates from './workWithCoordinates.js';
 
 removeInactive(vars.langButtons, vars.lang);
@@ -54,6 +54,7 @@ function inactiveButtonsFunction(item) {
 vars.inactiveButtons.forEach((item) => inactiveButtonsFunction(item));
 
 document.querySelector('.repeat-button').addEventListener('click', () => getImageAPIClick());
+vars.micro.addEventListener('click', () => recognizerStart());
 vars.submit.addEventListener('click', () => searchFunction());
 
 vars.input.addEventListener('keydown', (el) => {
