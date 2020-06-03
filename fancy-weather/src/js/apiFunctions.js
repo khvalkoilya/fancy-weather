@@ -13,12 +13,12 @@ export async function getImageAPI() {
     img.src = image.urls.regular;
     img.onload = () => {
       document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url(${img.src})`;
-    //   document.body.style.backgroundImage = `url(${img.src})`
     };
     console.log(`Search image by: ${dailyTime} ${season} ${vars.weather.current.weather[0].main}`);
   } catch (e) {
-    console.log(e.message);
+    return true;
   }
+  return true;
 }
 
 export async function getImageAPIClick() {
@@ -48,5 +48,4 @@ export async function getCoordinatesAPI() {
 
 export async function getWeatherAPI() {
   vars.weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=${vars.coordinates.lat}&lon=${vars.coordinates.lng}&lang=${vars.lang}&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`);
-  console.log(vars.weather);
 }

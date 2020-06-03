@@ -32,7 +32,6 @@ export function changeUnitOfTemperature(unit) {
   let tempFeels = vars.tempFeelsC;
   let temp3Days = vars.temp3DaysC;
   if (unit === 'F') {
-    console.log(vars.tempF);
     temp = vars.tempF;
     tempFeels = vars.tempFeelsF;
     temp3Days = vars.temp3DaysF;
@@ -74,7 +73,6 @@ export function weatherMarkup3Days() {
   if (vars.unit === 'F') {
     forecast = vars.temp3DaysF;
   }
-  console.log(forecast);
   forecast.forEach((item, index) => {
     create('div', `day-${index + 1}`, [
       create('p', 'days-3-day'),

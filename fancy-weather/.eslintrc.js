@@ -26,5 +26,8 @@ module.exports = {
     'max-len': [2, 120, 4, { ignoreUrls: true }],
     'no-unused-expressions': ['error', { allowTernary: true }],
     'no-undef': [0, { typeof: true }],
+    'new-cap': ['off', { newIsCap: true }],
+    'func-names': ['off', 'always'],
+    'no-console': ['off', 'always'],
   },
 };

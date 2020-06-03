@@ -4,7 +4,7 @@ import getDates from './initialization.js';
 import * as local from './utils/local.js';
 import { changeUnitOfTemperature } from './weather.js';
 import translate from './translate.js';
-import recognizerStart from './speech.js'
+import recognizerStart from './speech.js';
 import workWithCoordinates from './workWithCoordinates.js';
 
 removeInactive(vars.langButtons, vars.lang);

@@ -15,5 +15,4 @@ export default function translate() {
   });
 
   vars.input.setAttribute('placeholder', words.search);
-  // vars.weather.current.weather[0].description.toUpperCase()
 }

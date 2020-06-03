@@ -1,7 +1,7 @@
 import vars from './variables.js';
 import getDates from './initialization.js';
 
-export default function recognizerStart () {
+export default function recognizerStart() {
   vars.micro.classList.remove('inactive-search');
   const recognizer = new webkitSpeechRecognition();
   recognizer.interimResults = true;
@@ -20,4 +20,3 @@ export default function recognizerStart () {
   };
   recognizer.start();
 }
-
