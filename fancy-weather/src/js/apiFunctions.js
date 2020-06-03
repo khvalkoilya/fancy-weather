@@ -48,5 +48,5 @@ export async function getCoordinatesAPI() {
 
 export async function getWeatherAPI() {
   vars.weather = await getAPIDate(`https://api.openweathermap.org/data/2.5/onecall?lat=${vars.coordinates.lat}&lon=${vars.coordinates.lng}&lang=${vars.lang}&units=metric&appid=d419874a64a54466ad82bdcb712a2a83`);
-  // console.log(vars.weather);
+  console.log(vars.weather);
 }
